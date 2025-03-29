@@ -25,11 +25,11 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'  # Specify the JDK version
-          distribution: ''
+          distribution: 'adoptopenjdk'  # Optional, remove if unnecessary
 
       # Step 3: Cache Maven dependencies (speed up subsequent builds)
       - name: Cache Maven dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v3  # Updated version to v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}-${{ github.run_id }}
