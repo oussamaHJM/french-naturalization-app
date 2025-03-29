@@ -45,7 +45,7 @@ jobs:
         run: mvn test
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1
+        uses: actions/checkout@v3
         with:
           projectKey: oussamaHJM_french-naturalization-app
           organization: oussamahjm
