@@ -44,6 +44,13 @@ jobs:
       - name: Run tests with Maven
         run: mvn test
 
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1
+        with:
+          projectKey: oussamaHJM_french-naturalization-app
+          organization: oussamahjm
+          token: ${{ secrets.SONAR_TOKEN }}
+
       # Step 6: Deploy your app (optional)
       # This step will only run for the 'master' branch
       - name: Deploy to production (example)
